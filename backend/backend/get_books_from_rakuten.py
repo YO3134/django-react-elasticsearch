@@ -15,4 +15,19 @@ payload = {
     "page": "1",
 }
 
-print(payload)
+books = []
+
+
+class ReadRakutenAPI:
+    def api_connect():
+        while True:
+            response = requests.get(URL, params=payload)
+            data = json.loads(response.text)
+            books.extend(data["Items"])
+            if data["pageCount"] == data["page"]:
+                break
+            payload["page"] = data["page"] + 1
+            time.sleep(1)
+
+            with open("rakuten_book_json", "w") as f:
+                json.dump(books, f)
