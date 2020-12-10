@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 requests = "*"
+black = "*"
+elasticsearch = "*"
 
 [dev-packages]
 
