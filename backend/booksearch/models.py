@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Gen(models.Model):
+class Genre(models.Model):
     name = models.CharField(
         max_length=180, elp_text="本のジャンルを入力してください(SF,時代小説,古典,ファッション)"
     )
