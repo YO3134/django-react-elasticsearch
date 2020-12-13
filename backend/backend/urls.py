@@ -17,5 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path("admin/", admin.site.urls),
+    path("booksearch/", include("booksearch.urls")),
+    path('', RedirectView.as_view(url="booksearch/")
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)　# 開発時の静的ファイルurl生成
