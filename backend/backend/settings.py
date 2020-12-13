@@ -125,6 +125,7 @@ STATIC_URL = "/static/"
 
 CORS_ORIGIN_WHITELIST = "localhost:3000/"
 
+# ローカル環境変数の読み込み
 try:
     from .local_settings import *
 except ImportError:
