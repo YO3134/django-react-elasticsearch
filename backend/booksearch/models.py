@@ -29,7 +29,7 @@ class Book(models.Model):
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, null=True)
     price = models.IntegerField(null=True, blank=True)
     publisher_name = models.CharField(max_length=120)
-    isbn = models.CharField("ISBN", max_lenght=13, unique=True)
+    isbn = models.CharField("ISBN", max_length=13, unique=True)
     genre = models.ManyToManyField(Genre, help_text="この本のジャンルを選択してください")
     description = models.TextField()
     stock_status = models.IntegerField()
@@ -39,7 +39,7 @@ class Book(models.Model):
         return self.title
 
 
-class Author(models.MOdel):
+class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
